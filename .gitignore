@@ -1,0 +1,11 @@
+work/
+outputs/
+.DS_Store
+__pycache__/
+*.pyc
+.codex/
+dist/
+build/
+*.egg-info/
+*-audit.json
+*.identity.json
