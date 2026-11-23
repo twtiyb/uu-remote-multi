@@ -74,6 +74,8 @@ python3 -m unittest discover -s tests -v
 
 ## PVE / Windows 设备码重复
 
-另附[只读硬件标识采集工具](docs/pve-duplicate-ids.md)，用于比较 PVE VM 和 Windows 实际看到的 UUID、序列号与 MAC。它不会自动修改 VM、重启 Windows或清理 UU 数据。
+另附 [PVE Windows 同码处理](docs/pve-duplicate-ids.md)：已在两份 Windows 10 克隆副本上复现同码，并通过重建 UU 客户端身份及缓存获得不同设备码。两条远控连接同时由 UU CLI 确认为 `connected`，重启后设备码保持不变且能再次同时连接；画面和键鼠仍需人工复核。`tools/windows_uu_identity.ps1` 默认只检查，显式加 `-Apply` 才会备份并重建身份，要求 UU 已退出账户；目前仅支持实测的 Windows UU **4.48.1.5606**。
+
+同时保留只读硬件采集工具，用于比较 PVE 配置与 Windows 实际看到的 UUID、序列号和 MAC。
 
 开源仓库只提交工具源码和文档，不提交生成的 App、日志、账户配置或设备信息。

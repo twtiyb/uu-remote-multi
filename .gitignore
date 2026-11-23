@@ -9,3 +9,4 @@ build/
 *.egg-info/
 *-audit.json
 *.identity.json
+*-identity-plan.json

@@ -1,6 +1,8 @@
 # Read-only: collect identifiers relevant to duplicate remote-control device IDs.
 # No account tokens, passwords, or UU configuration contents are read.
 $ErrorActionPreference = 'Stop'
+$ProgressPreference = 'SilentlyContinue'
+[Console]::OutputEncoding = New-Object System.Text.UTF8Encoding($false)
 $product = Get-CimInstance Win32_ComputerSystemProduct
 $bios = Get-CimInstance Win32_BIOS
 $board = Get-CimInstance Win32_BaseBoard
